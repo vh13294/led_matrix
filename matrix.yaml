@@ -1,7 +1,7 @@
 esphome:
   name: matrix
   on_boot:
-    priority: 800
+    priority: -100
     then:
       - script.execute: get_rate
 
