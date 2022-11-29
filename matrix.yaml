@@ -1,5 +1,9 @@
 esphome:
   name: matrix
+  on_boot:
+    priority: 800
+    then:
+      - script.execute: get_rate
 
 esp32:
   board: esp32dev
@@ -42,9 +46,6 @@ image:
 text_sensor:
   - platform: template
     id: exchange_rate
-    lambda: |-
-      return {"4000"};
-    update_interval: 60s
 
 http_request:
   id: http_request_data
